@@ -17,9 +17,8 @@ public class Main
         String passengerFullName = input.nextLine();
         FlightBooking fb = new FlightBooking(passengerFullName, null, null, 0, 0);   
         
-        Scanner input1 = new Scanner(System.in);
         System.out.println("Please pick your choice of class you would like to travel in\n1. First\n2. Business\n3. Economy"); 
-        int a = input1.nextInt();
+        int a = input.nextInt();
         String choice1 = new String();
         switch(a){
             case 1:
@@ -36,7 +35,6 @@ public class Main
             break;
         }
         
-        Scanner input2 = new Scanner(System.in);
         System.out.println("Please choose your tripType\n1. One way\n2. Return");
         int b = input.nextInt();
         String choice2 = new String();
@@ -50,7 +48,7 @@ public class Main
             fb.setTripType(choice2);
             break;
         }
-        Scanner input3 = new Scanner(System.in);
+        
         System.out.println("Please choose your sources\n1. Nanjing\n2. Beijing\n3. Oulu\n4. Helsinki");
         int c = input.nextInt();
         String choice3 = new String();
@@ -73,7 +71,6 @@ public class Main
             break;
         }
           
-        Scanner input4 = new Scanner(System.in);
         System.out.println("Please choose your destinations\n1. Nanjing\n2. Beijing\n3. Oulu\n4. Helsinki");
         int d = input.nextInt();
         String choice4 = new String();
@@ -95,31 +92,25 @@ public class Main
             fb.setTripDestination(choice3,choice4);
             break;
         }
-        
+
         fb.getBookingClass();
         fb.getTripType();
         fb.getTripSource();
         fb.getTripDestination();
-        
-        Scanner input5 = new Scanner(System.in);
+
+        Scanner input1 = new Scanner(System.in);
         System.out.println("Please give the date of departure");
-        String sdepart = input5.nextLine();
+        String sdepart = input1.nextLine();
         LocalDate depart = LocalDate.parse(sdepart);
         fb.setDepartureDate(depart);
         
-        Scanner input6 = new Scanner(System.in);
         System.out.println("Please give the date of return");
-        String sreturn = input6.nextLine();
+        String sreturn = input1.nextLine();
         LocalDate returnDate = LocalDate.parse(sreturn);
         fb.setReturnDate(returnDate);
-        
+       
         input.close();
         input1.close();
-        input2.close();
-        input3.close();
-        input4.close();
-        input5.close();
-        input6.close();
 
         fb.setTotalPassengers(2, 3);
         fb.setFlightID("FOF"+"0345"+"IN");        
